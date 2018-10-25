@@ -5,6 +5,7 @@ const https = require('https')
 
 const dburl = process.env.MONGODB_URL || 'mongodb://cfd-account:lTaqvuxCfztEPLrfIfW69MRm2o74qEFeGtH4j19Byn90z7jgGTUZCueKJynPTXuArHnuqdd1ivc2bWUEcEGiGQ==@cfd-account.documents.azure.com:10255/?ssl=true&replicaSet=globaldb';
 var str = "Not Connected";
+var SMSAuthKey = process.env.SMS_AUTH_KEY || '244589AX3oNa6cBo5bd1d7bc';
 
 // ******************* Connecting to database : 
 
@@ -32,6 +33,17 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
 	res.send(`<h1>SMS API for KnowDisaster</h1></br><p>${str} to MongoDB`);
+});
+
+app.get('/api/sendMessage1/:id', (req, res) => {
+	string = ''
+	http.get(`http://api.msg91.com/api/sendhttp.php?country=91&sender=KNODIS&route=4&mobiles=${req.params.id}&authkey=244589AX3oNa6cBo5bd1d7bc&message=${message1}`,  (resp) => {
+        resp.on("data", function (data) { string += data; });
+        resp.on("end", async () => {
+            console.log(string);
+        });
+    });
+    res.send(string);
 });
 
 
