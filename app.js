@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/sendMessage1/:id', (req, res) => {
 	string = ''
-	https.get(`http://api.msg91.com/api/sendhttp.php?country=91&sender=KNODIS&route=4&mobiles=${req.params.id}&authkey=244589AX3oNa6cBo5bd1d7bc&message=${message1}`,  (resp) => {
+	https.get(`https://api.msg91.com/api/sendhttp.php?country=91&sender=KNODIS&route=4&mobiles=${req.params.id}&authkey=244589AX3oNa6cBo5bd1d7bc&message=${message1}`,  (resp) => {
         resp.on("data", function (data) { string += data; });
         resp.on("end", async () => {
             console.log(string);
