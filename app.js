@@ -41,6 +41,7 @@ app.get('/api/sendMessage1/:id', (req, res) => {
         resp.on("data", function (data) { string += data; });
         resp.on("end", async () => {
             console.log(string);
+            res.send(string);
         });
     });
     res.send(string);
