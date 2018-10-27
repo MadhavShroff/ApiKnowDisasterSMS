@@ -24,7 +24,7 @@ const nameAndLocationObject = mongoose.Schema({
 	long: String,
 });
 
-message1 = "Hi! Thanks for using KnowDisaster. You have been registered successfully. You will now recieve disaster relief info, like directions to the nearest Relief Camps or Shelters along with the Contact details of emergency relief teams, ie. phone numbers of Govt. and non-Govt relief agencies, at the time of a crisis. Do update your location as frequestly as possible. Get real time disaster occourance probabilities and Current weather info, and directions to relief centres at KnowDisasterApp.azurewebsites.net. To opt out, please visit KnowDisasterApp.azurewebsites.net/optOut";
+message1 = "Hi! Thanks for using KnowDisaster. You have been registered successfully. You will now recieve disaster relief info, like directions to the nearest Relief Camps or Shelters along with the Contact details of emergency relief teams, ie. phone numbers of Govt. and non-Govt relief agencies, at the time of a crisis. Do update your location as frequently as possible. Get real time disaster occourance probabilities and Current weather info, and directions to relief centres at KnowDisasterApp.azurewebsites.net. To opt out, please visit KnowDisasterApp.azurewebsites.net/optOut";
 
 const NALO = mongoose.model('nameAndLocationObject', nameAndLocationObject);
 
